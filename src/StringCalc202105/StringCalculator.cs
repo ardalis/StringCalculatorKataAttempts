@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace StringCalc202105
 {
@@ -8,7 +9,11 @@ namespace StringCalc202105
         {
             if (String.IsNullOrEmpty(numbers)) return 0;
 
-            return int.Parse(numbers);
+            var result = numbers.Split(',')
+                .Select(s => int.Parse(s))
+                .Sum();
+
+            return result;
         }
     }
 }
