@@ -8,7 +8,11 @@ namespace StringCalc202105
         [Fact]
         public void Returns0GivenEmptyString()
         {
+            var calculator = new StringCalculator();
 
+            var result = calculator.Add("");
+
+            Assert.Equal(0, result);
         }
     }
 }
