@@ -36,6 +36,7 @@ namespace StringCalc202105
             }
 
             var result = numberList
+                .Where(n => n <= 1000)
                 .Sum();
 
             return result;
