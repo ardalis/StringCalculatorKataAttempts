@@ -6,7 +6,9 @@ namespace StringCalc202105
     {
         internal object Add(string numbers)
         {
-            return 0;
+            if (String.IsNullOrEmpty(numbers)) return 0;
+
+            return 1;
         }
     }
 }
