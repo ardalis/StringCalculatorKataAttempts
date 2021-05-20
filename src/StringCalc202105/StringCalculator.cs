@@ -8,7 +8,7 @@ namespace StringCalc202105
         {
             if (String.IsNullOrEmpty(numbers)) return 0;
 
-            return 1;
+            return int.Parse(numbers);
         }
     }
 }

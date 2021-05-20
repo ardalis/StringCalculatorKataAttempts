@@ -17,6 +17,7 @@ namespace StringCalc202105
 
         [Theory]
         [InlineData("1", 1)]
+        [InlineData("2", 2)]
         public void Returns1GivenStringWith1(string numbers, int expectedResult)
         {
             var calculator = new StringCalculator();
