@@ -5,12 +5,12 @@ namespace StringCalc202105
 {
     public class StringCalculator_Add
     {
+        private StringCalculator _calculator = new StringCalculator();
+
         [Fact]
         public void Returns0GivenEmptyString()
         {
-            var calculator = new StringCalculator();
-
-            var result = calculator.Add("");
+            var result = _calculator.Add("");
 
             Assert.Equal(0, result);
         }
@@ -20,9 +20,7 @@ namespace StringCalc202105
         [InlineData("2", 2)]
         public void ReturnsNumberGivenStringWithOneNumber(string numbers, int expectedResult)
         {
-            var calculator = new StringCalculator();
-
-            var result = calculator.Add(numbers);
+            var result = _calculator.Add(numbers);
 
             Assert.Equal(expectedResult, result);
         }
@@ -32,9 +30,17 @@ namespace StringCalc202105
         [InlineData("2,3", 5)]
         public void ReturnsSumGivenStringWithTwoCommaSeparatedNumbers(string numbers, int expectedResult)
         {
-            var calculator = new StringCalculator();
+            var result = _calculator.Add(numbers);
 
-            var result = calculator.Add(numbers);
+            Assert.Equal(expectedResult, result);
+        }
+
+        [Theory]
+        [InlineData("1,2,3", 6)]
+        [InlineData("2,3,4", 9)]
+        public void ReturnsSumGivenStringWithThreeCommaSeparatedNumbers(string numbers, int expectedResult)
+        {
+            var result = _calculator.Add(numbers);
 
             Assert.Equal(expectedResult, result);
         }
